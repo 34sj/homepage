@@ -6,7 +6,7 @@
     {
       "label": "jekyll serve auto reload",
       "type": "shell",
-      "command": "bundle exec jekyll serve --livereload --baseurl '/homepage'"
+      "command": "bundle exec jekyll serve --livereload"
     }
   ]
 }
