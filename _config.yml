@@ -46,3 +46,4 @@ plugins:
   - jekyll-seo-tag
 
 collections_dir: .
+collections.directory: "/github/workspace/./_posts"
