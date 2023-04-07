@@ -45,5 +45,4 @@ google-analytics: G-WCRC1TC2V5
 plugins:
   - jekyll-seo-tag
 
-collections_dir: .
 collections.directory: "/github/workspace/./_posts"
