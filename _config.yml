@@ -10,7 +10,7 @@ description: ctsetera.dev
 theme-color: indigo # indigo|yellow|pink|green|stone|
 
 # homepage information
-author: めゆう
+author: false
 author-bio: false # change to false to hide
 author-image: icon.png # file must be in the /assets/img/ folder
 
