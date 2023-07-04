@@ -2,69 +2,114 @@
   <div class="flex flex-wrap text-center">
     <div class="w-full">
       <div>
+        {% assign names = "" %}
+
         {% if site.twitter %}
-          <a href="{{site.twitter}}" target="_blank">
-            <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-twitter"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "twitter" | append: "," %}
         {% endif %}
 
         {% if site.facebook %}
-          <a href="{{site.facebook}}" target="_blank">
-            <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-facebook"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "facebook" | append: "," %}
         {% endif %}
 
         {% if site.instagram %}
-          <a href="{{site.instagram}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-instagram"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "instagram" | append: "," %}
         {% endif %}
 
         {% if site.github %}
-          <a href="{{site.github}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-github"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "github" | append: "," %}
         {% endif %}
 
         {% if site.linkedin %}
-          <a href="{{site.linkedin}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-linkedin"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "linkedin" | append: "," %}
         {% endif %}
 
         {% if site.medium %}
-          <a href="{{site.medium}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fab fa-medium"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "medium" | append: "," %}
         {% endif %}
 
         {% if site.google-scholar %}
-          <a href="{{site.google-scholar}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fas fa-graduation-cap"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "google-scholar" | append: "," %}
         {% endif %}
 
         {% if site.email %}
-          <a href="{{site.email}}" target="_blank">
-            <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </a>
+        {% assign names = names | append: "email" | append: "," %}
         {% endif %}
+
+        {% assign names = names | split: "," %}
+
+        {% for name in names %}
+          {% if forloop.last %}
+            {% assign mr2 = "" %}
+          {% else %}
+            {% assign mr2 = "mr-2"" %}
+          {% endif %}
+
+          {% if name == "twitter" %}
+            <a href="{{site.twitter}}" target="_blank">
+              <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-twitter"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "facebook" %}
+            <a href="{{site.facebook}}" target="_blank">
+              <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-facebook"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "instagram" %}
+            <a href="{{site.instagram}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-instagram"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "github" %}
+            <a href="{{site.github}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-github"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "linkedin" %}
+            <a href="{{site.linkedin}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-linkedin"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "medium" %}
+            <a href="{{site.medium}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fab fa-medium"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "google-scholar" %}
+            <a href="{{site.google-scholar}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fas fa-graduation-cap"></i>
+              </button>
+            </a>
+          {% endif %}
+
+          {% if name == "email" %}
+            <a href="{{site.email}}" target="_blank">
+              <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none {{ mr2 }}" type="button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </a>
+          {% endif %}
+
+        {% endfor %}
       </div>
     </div>
   </div>
