@@ -22,9 +22,9 @@ nav-menu:
     permalink: blog
 
 # use false to turn off any social media links
-twitter: https://bsky.app/profile/ctsetera.bsky.social
+twitter: false
 facebook: false
-instagram: false
+instagram: https://www.instagram.com/ctsetera/
 github: https://github.com/34sj
 linkedin: false
 medium: false
